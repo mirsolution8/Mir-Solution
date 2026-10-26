@@ -1,0 +1,1181 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MIR SOLUTION | Solusi Teknologi untuk Bisnis</title>
+
+    <meta
+        name="description"
+        content="MIR SOLUTION menyediakan jasa teknologi, pengembangan website, jaringan, IT support, dan solusi digital untuk bisnis."
+    >
+
+    <style>
+        /* =========================
+           1. PENGATURAN DASAR
+        ========================== */
+
+        :root {
+            --primary: #0b1f3a;
+            --secondary: #123b68;
+            --accent: #38bdf8;
+            --light: #f4f8fc;
+            --white: #ffffff;
+            --text: #172b45;
+            --muted: #64748b;
+            --border: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--white);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: min(1120px, 90%);
+            margin: auto;
+        }
+
+        .section {
+            padding: 90px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 50px;
+        }
+
+        .section-title span {
+            color: var(--secondary);
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 13px;
+        }
+
+        .section-title h2 {
+            font-size: clamp(28px, 4vw, 40px);
+            line-height: 1.25;
+            margin: 12px 0;
+            color: var(--primary);
+        }
+
+        .section-title p {
+            color: var(--muted);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--primary);
+        }
+
+        .btn-primary:hover {
+            background: #7dd3fc;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 1px solid rgba(255,255,255,0.5);
+            color: var(--white);
+        }
+
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--primary);
+        }
+
+
+        /* =========================
+           2. NAVBAR
+        ========================== */
+
+        .navbar {
+            background: var(--primary);
+            color: var(--white);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-content {
+            min-height: 76px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 14px;
+            color: #dbeafe;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+
+        /* =========================
+           3. HERO SECTION
+        ========================== */
+
+        .hero {
+            background:
+                radial-gradient(
+                    circle at 80% 20%,
+                    #1e4d7a 0%,
+                    transparent 35%
+                ),
+                linear-gradient(
+                    135deg,
+                    #081629,
+                    #123b68
+                );
+
+            color: var(--white);
+            padding: 110px 0;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .hero-label {
+            display: inline-block;
+            padding: 7px 14px;
+            border: 1px solid rgba(56,189,248,0.4);
+            background: rgba(56,189,248,0.1);
+            color: var(--accent);
+            border-radius: 30px;
+            font-size: 13px;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-size: clamp(36px, 5vw, 58px);
+            line-height: 1.15;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: var(--accent);
+        }
+
+        .hero p {
+            color: #dbeafe;
+            font-size: 17px;
+            max-width: 580px;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .hero-visual {
+            min-height: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .tech-card {
+            width: 100%;
+            max-width: 370px;
+            padding: 35px;
+            border: 1px solid rgba(255,255,255,0.15);
+            background: rgba(255,255,255,0.08);
+            border-radius: 24px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 25px 70px rgba(0,0,0,0.2);
+        }
+
+        .tech-card h3 {
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+
+        .tech-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.12);
+        }
+
+        .tech-item:last-child {
+            border-bottom: none;
+        }
+
+        .tech-icon {
+            width: 45px;
+            height: 45px;
+            display: grid;
+            place-items: center;
+            border-radius: 12px;
+            background: rgba(56,189,248,0.15);
+            color: var(--accent);
+            font-size: 22px;
+        }
+
+        .tech-item strong {
+            display: block;
+        }
+
+        .tech-item small {
+            color: #cbd5e1;
+        }
+
+
+        /* =========================
+           4. PROFIL PERUSAHAAN
+        ========================== */
+
+        .about {
+            background: var(--light);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .about-visual {
+            min-height: 350px;
+            background: linear-gradient(
+                135deg,
+                var(--primary),
+                var(--secondary)
+            );
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-align: center;
+            padding: 40px;
+        }
+
+        .about-visual strong {
+            display: block;
+            font-size: 80px;
+            color: var(--accent);
+            line-height: 1.2;
+        }
+
+        .about-visual p {
+            font-size: 20px;
+            margin-top: 10px;
+        }
+
+        .about-text span {
+            color: var(--secondary);
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 13px;
+        }
+
+        .about-text h2 {
+            font-size: clamp(28px, 4vw, 40px);
+            line-height: 1.25;
+            margin: 12px 0 20px;
+            color: var(--primary);
+        }
+
+        .about-text p {
+            color: var(--muted);
+            margin-bottom: 18px;
+        }
+
+        .about-points {
+            list-style: none;
+            margin-top: 25px;
+        }
+
+        .about-points li {
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .about-points li::before {
+            content: "✓";
+            color: #0284c7;
+            margin-right: 12px;
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           5. LAYANAN
+        ========================== */
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .service-card {
+            padding: 30px;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            background: var(--white);
+            transition: 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--accent);
+            box-shadow: 0 15px 35px rgba(11,31,58,0.08);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            display: grid;
+            place-items: center;
+            background: #e0f2fe;
+            color: var(--secondary);
+            border-radius: 14px;
+            font-size: 28px;
+            margin-bottom: 22px;
+        }
+
+        .service-card h3 {
+            font-size: 20px;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        .service-card p {
+            color: var(--muted);
+            font-size: 15px;
+        }
+
+
+        /* =========================
+           6. KEUNGGULAN
+        ========================== */
+
+        .advantages {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .advantages .section-title h2 {
+            color: var(--white);
+        }
+
+        .advantages .section-title p {
+            color: #cbd5e1;
+        }
+
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .advantage-card {
+            text-align: center;
+            padding: 25px 15px;
+        }
+
+        .advantage-card strong {
+            display: block;
+            font-size: 38px;
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+
+        .advantage-card h3 {
+            font-size: 17px;
+            margin-bottom: 10px;
+        }
+
+        .advantage-card p {
+            color: #cbd5e1;
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           7. PROSES KERJA
+        ========================== */
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .process-card {
+            padding: 25px;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+        }
+
+        .process-number {
+            width: 45px;
+            height: 45px;
+            display: grid;
+            place-items: center;
+            background: var(--secondary);
+            color: var(--white);
+            border-radius: 12px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .process-card h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .process-card p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           8. CALL TO ACTION
+        ========================== */
+
+        .cta {
+            background: var(--light);
+            padding: 70px 0;
+        }
+
+        .cta-box {
+            background: linear-gradient(
+                135deg,
+                var(--primary),
+                var(--secondary)
+            );
+            padding: 55px;
+            border-radius: 24px;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .cta-box h2 {
+            font-size: clamp(28px, 4vw, 40px);
+            margin-bottom: 15px;
+        }
+
+        .cta-box p {
+            color: #dbeafe;
+            max-width: 650px;
+            margin: 0 auto 25px;
+        }
+
+
+        /* =========================
+           9. FOOTER
+        ========================== */
+
+        .footer {
+            background: #061222;
+            color: var(--white);
+            padding: 60px 0 25px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer h3 {
+            margin-bottom: 18px;
+        }
+
+        .footer p,
+        .footer a {
+            color: #cbd5e1;
+            font-size: 14px;
+        }
+
+        .footer a:hover {
+            color: var(--accent);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.12);
+            padding-top: 20px;
+            text-align: center;
+            color: #94a3b8;
+            font-size: 13px;
+        }
+
+
+        /* =========================
+           10. RESPONSIVE MOBILE
+        ========================== */
+
+        @media (max-width: 900px) {
+            .hero-content,
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-visual {
+                min-height: auto;
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .advantages-grid,
+            .process-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .nav-content {
+                flex-direction: column;
+                padding: 18px 0;
+            }
+
+            .nav-links {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .nav-links a {
+                font-size: 12px;
+            }
+
+            .hero {
+                padding: 75px 0;
+            }
+
+            .section {
+                padding: 65px 0;
+            }
+
+            .services-grid,
+            .advantages-grid,
+            .process-grid,
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-box {
+                padding: 35px 22px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .hero-buttons .btn {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <header class="navbar">
+        <div class="container nav-content">
+
+            <a href="#home" class="logo">
+                MIR <span>SOLUTION</span>
+            </a>
+
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home">Beranda</a></li>
+                    <li><a href="#about">Tentang Kami</a></li>
+                    <li><a href="#services">Layanan</a></li>
+                    <li><a href="#process">Proses Kerja</a></li>
+                    <li><a href="#contact">Kontak</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <!-- =========================
+         HERO SECTION
+    ========================== -->
+
+    <section class="hero" id="home">
+        <div class="container hero-content">
+
+            <div class="hero-text">
+
+                <span class="hero-label">
+                    Technology Solutions Provider
+                </span>
+
+                <h1>
+                    Solusi Teknologi
+                    <span>untuk Masa Depan Bisnis Anda</span>
+                </h1>
+
+                <p>
+                    MIR SOLUTION membantu perusahaan dan pelaku bisnis
+                    mengoptimalkan teknologi melalui layanan IT yang
+                    profesional, efisien, dan terpercaya.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a
+                        href="#contact"
+                        class="btn btn-primary"
+                    >
+                        Konsultasi Sekarang
+                    </a>
+
+                    <a
+                        href="#services"
+                        class="btn btn-outline"
+                    >
+                        Lihat Layanan
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="hero-visual">
+
+                <div class="tech-card">
+
+                    <h3>Solusi Teknologi Kami</h3>
+
+                    <div class="tech-item">
+                        <div class="tech-icon">⌘</div>
+                        <div>
+                            <strong>Digital Solutions</strong>
+                            <small>Transformasi digital bisnis</small>
+                        </div>
+                    </div>
+
+                    <div class="tech-item">
+                        <div class="tech-icon">⌁</div>
+                        <div>
+                            <strong>Network Infrastructure</strong>
+                            <small>Jaringan yang stabil dan aman</small>
+                        </div>
+                    </div>
+
+                    <div class="tech-item">
+                        <div class="tech-icon">⚙</div>
+                        <div>
+                            <strong>IT Support</strong>
+                            <small>Dukungan teknis profesional</small>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- =========================
+         TENTANG PERUSAHAAN
+    ========================== -->
+
+    <section class="section about" id="about">
+
+        <div class="container about-content">
+
+            <div class="about-visual">
+                <div>
+                    <strong>5+</strong>
+                    <p>Tahun Pengalaman<br>di Bidang Teknologi</p>
+                </div>
+            </div>
+
+            <div class="about-text">
+
+                <span>Tentang MIR SOLUTION</span>
+
+                <h2>
+                    Mitra Teknologi untuk Pertumbuhan Bisnis
+                </h2>
+
+                <p>
+                    MIR SOLUTION merupakan perusahaan yang bergerak
+                    di bidang jasa teknologi informasi. Selama 5 tahun,
+                    kami berkomitmen membantu bisnis dan organisasi
+                    menghadapi kebutuhan teknologi yang terus berkembang.
+                </p>
+
+                <p>
+                    Kami menghadirkan solusi yang dirancang sesuai
+                    kebutuhan klien, mulai dari pengembangan website,
+                    infrastruktur jaringan, hingga dukungan teknis
+                    dan konsultasi teknologi.
+                </p>
+
+                <ul class="about-points">
+                    <li>Solusi sesuai kebutuhan bisnis</li>
+                    <li>Pelayanan profesional dan responsif</li>
+                    <li>Fokus pada kualitas dan efisiensi</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         LAYANAN
+    ========================== -->
+
+    <section class="section" id="services">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <span>Layanan Kami</span>
+
+                <h2>
+                    Solusi Teknologi yang Mendukung Bisnis Anda
+                </h2>
+
+                <p>
+                    Kami menyediakan berbagai layanan teknologi
+                    untuk membantu bisnis bekerja lebih efektif,
+                    aman, dan produktif.
+                </p>
+
+            </div>
+
+            <div class="services-grid">
+
+                <div class="service-card">
+                    <div class="service-icon">⌘</div>
+
+                    <h3>Pengembangan Website</h3>
+
+                    <p>
+                        Pembuatan website company profile,
+                        website bisnis, dan solusi web yang
+                        dirancang sesuai kebutuhan perusahaan.
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">⌁</div>
+
+                    <h3>Instalasi Jaringan</h3>
+
+                    <p>
+                        Perencanaan, instalasi, konfigurasi,
+                        dan pemeliharaan jaringan komputer
+                        untuk mendukung konektivitas bisnis.
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">⚙</div>
+
+                    <h3>IT Support & Maintenance</h3>
+
+                    <p>
+                        Dukungan teknis, pemeliharaan perangkat,
+                        troubleshooting, dan perawatan sistem
+                        teknologi perusahaan.
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">▣</div>
+
+                    <h3>Pengadaan Perangkat IT</h3>
+
+                    <p>
+                        Penyediaan perangkat komputer,
+                        laptop, perangkat jaringan, dan
+                        kebutuhan teknologi bisnis.
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">◇</div>
+
+                    <h3>Konsultasi Teknologi</h3>
+
+                    <p>
+                        Analisis kebutuhan teknologi dan
+                        rekomendasi solusi yang tepat
+                        untuk mendukung operasional bisnis.
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">◎</div>
+
+                    <h3>Solusi Digital</h3>
+
+                    <p>
+                        Membantu bisnis meningkatkan efisiensi
+                        melalui pemanfaatan teknologi dan
+                        sistem digital yang sesuai.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         KEUNGGULAN
+    ========================== -->
+
+    <section class="section advantages">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <span>Mengapa Memilih Kami</span>
+
+                <h2>
+                    Komitmen Kami untuk Setiap Klien
+                </h2>
+
+                <p>
+                    Kami percaya bahwa teknologi yang tepat
+                    dapat memberikan nilai nyata bagi bisnis.
+                </p>
+
+            </div>
+
+            <div class="advantages-grid">
+
+                <div class="advantage-card">
+                    <strong>5+</strong>
+                    <h3>Tahun Pengalaman</h3>
+                    <p>
+                        Pengalaman dalam menyediakan
+                        layanan teknologi.
+                    </p>
+                </div>
+
+                <div class="advantage-card">
+                    <strong>01</strong>
+                    <h3>Solusi Tepat</h3>
+                    <p>
+                        Pendekatan berdasarkan kebutuhan
+                        setiap klien.
+                    </p>
+                </div>
+
+                <div class="advantage-card">
+                    <strong>02</strong>
+                    <h3>Profesional</h3>
+                    <p>
+                        Mengutamakan kualitas dan
+                        tanggung jawab.
+                    </p>
+                </div>
+
+                <div class="advantage-card">
+                    <strong>03</strong>
+                    <h3>Dukungan</h3>
+                    <p>
+                        Mendampingi klien dalam
+                        kebutuhan teknologinya.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PROSES KERJA
+    ========================== -->
+
+    <section class="section" id="process">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <span>Proses Kerja</span>
+
+                <h2>
+                    Langkah Kerja yang Terstruktur
+                </h2>
+
+                <p>
+                    Setiap proyek kami jalankan melalui
+                    tahapan yang jelas agar solusi sesuai
+                    dengan kebutuhan klien.
+                </p>
+
+            </div>
+
+            <div class="process-grid">
+
+                <div class="process-card">
+
+                    <div class="process-number">01</div>
+
+                    <h3>Konsultasi</h3>
+
+                    <p>
+                        Memahami kebutuhan, tujuan,
+                        dan tantangan teknologi klien.
+                    </p>
+
+                </div>
+
+                <div class="process-card">
+
+                    <div class="process-number">02</div>
+
+                    <h3>Analisis & Perencanaan</h3>
+
+                    <p>
+                        Menentukan solusi, ruang lingkup,
+                        dan rencana pengerjaan.
+                    </p>
+
+                </div>
+
+                <div class="process-card">
+
+                    <div class="process-number">03</div>
+
+                    <h3>Implementasi</h3>
+
+                    <p>
+                        Melaksanakan pekerjaan berdasarkan
+                        rencana dan standar yang disepakati.
+                    </p>
+
+                </div>
+
+                <div class="process-card">
+
+                    <div class="process-number">04</div>
+
+                    <h3>Evaluasi & Dukungan</h3>
+
+                    <p>
+                        Melakukan pengujian, evaluasi,
+                        dan dukungan setelah pekerjaan.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CALL TO ACTION
+    ========================== -->
+
+    <section class="cta" id="contact">
+
+        <div class="container">
+
+            <div class="cta-box">
+
+                <h2>
+                    Siap Mengembangkan Bisnis dengan Teknologi?
+                </h2>
+
+                <p>
+                    Diskusikan kebutuhan teknologi perusahaan Anda
+                    bersama MIR SOLUTION. Kami siap membantu
+                    menemukan solusi yang tepat.
+                </p>
+
+                <a
+                    href="https://wa.me/6281275298975"
+                    class="btn btn-primary"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Hubungi Kami
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer class="footer">
+
+        <div class="container">
+
+            <div class="footer-grid">
+
+                <div>
+
+                    <h3>
+                        MIR <span style="color: #38bdf8;">SOLUTION</span>
+                    </h3>
+
+                    <p>
+                        Mitra solusi teknologi untuk membantu
+                        bisnis berkembang melalui layanan
+                        teknologi informasi yang profesional.
+                    </p>
+
+                </div>
+
+                <div>
+
+                    <h3>Navigasi</h3>
+
+                    <ul class="footer-links">
+                        <li><a href="#home">Beranda</a></li>
+                        <li><a href="#about">Tentang Kami</a></li>
+                        <li><a href="#services">Layanan</a></li>
+                        <li><a href="#process">Proses Kerja</a></li>
+                    </ul>
+
+                </div>
+
+                <div>
+
+                    <h3>Kontak</h3>
+
+                    <ul class="footer-links">
+                        <li>
+                            <a href="mailto:mirsolution8@gmail.com">
+                                mirsolution8@gmail.com
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://wa.me/6281275298975">
+                                WhatsApp
+                            </a>
+                        </li>
+
+                        <li>
+                            <p>Indonesia</p>
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+
+                <p>
+                    © 2026 MIR SOLUTION.
+                    All Rights Reserved.
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+</body>
+</html>
